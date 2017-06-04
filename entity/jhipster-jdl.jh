@@ -1,0 +1,15 @@
+entity Menu{
+    menuId Long
+    code String
+    pCode String
+    cDate ZonedDateTime
+}
+
+entity MenuAuth{
+    id Long
+    menuId Long
+    authName String
+}
+
+
+

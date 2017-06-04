@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "menuId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cDate",
+            "fieldType": "ZonedDateTime"
+        },{
+	    "fieldName":"name",
+            "fieldType": "String"
+	},{
+	    "fieldName":"type",
+            "fieldType": "String"
+	}
+    ],
+    "changelogDate": "20170604023246",
+    "entityTableName": "menu",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

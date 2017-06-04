@@ -1,0 +1,22 @@
+{
+    "jhipsterApp": {
+        "menuAuth" : {
+            "home": {
+                "title": "Menu Auths",
+                "createLabel": "Create a new Menu Auth",
+                "createOrEditLabel": "Create or edit a Menu Auth"
+            },
+            "created": "A new Menu Auth is created with identifier {{ param }}",
+            "updated": "A Menu Auth is updated with identifier {{ param }}",
+            "deleted": "A Menu Auth is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Menu Auth {{ id }}?"
+            },
+            "detail": {
+                "title": "Menu Auth"
+            },
+            "menuId": "Menu Id",
+            "authName": "Auth Name"
+        }
+    }
+}

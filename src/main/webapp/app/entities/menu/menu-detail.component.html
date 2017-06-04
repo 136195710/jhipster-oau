@@ -1,0 +1,45 @@
+
+<div *ngIf="menu">
+    <h2><span jhiTranslate="jhipsterApp.menu.detail.title">Menu</span> {{menu.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jhipsterApp.menu.menuId">Menu Id</span></dt>
+        <dd>
+            <span>{{menu.menuId}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.menu.code">Code</span></dt>
+        <dd>
+            <span>{{menu.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.menu.pCode">P Code</span></dt>
+        <dd>
+            <span>{{menu.pCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.menu.cDate">C Date</span></dt>
+        <dd>
+            <span>{{menu.cDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.menu.name">Name</span></dt>
+        <dd>
+            <span>{{menu.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.menu.type">Type</span></dt>
+        <dd>
+            <span>{{menu.type}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'menu/'+ menu.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

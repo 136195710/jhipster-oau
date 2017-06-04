@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span jhiTranslate="jhipsterApp.menu.home.title">Menus</span>
+        <button class="btn btn-primary float-right create-menu" [routerLink]="['/', { outlets: { popup: ['menu-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="jhipsterApp.menu.home.createLabel">
+            Create new Menu
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="menus">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.menuId">Menu Id</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.code">Code</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.pCode">P Code</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.cDate">C Date</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.name">Name</span></th>
+            <th><span jhiTranslate="jhipsterApp.menu.type">Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let menu of menus ;trackBy: trackId">
+                <td><a [routerLink]="['../menu', menu.id ]">{{menu.id}}</a></td>
+                <td>{{menu.menuId}}</td>
+                <td>{{menu.code}}</td>
+                <td>{{menu.pCode}}</td>
+                <td>{{menu.cDate | date:'medium'}}</td>
+                <td>{{menu.name}}</td>
+                <td>{{menu.type}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../menu', menu.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'menu/'+ menu.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'menu/'+ menu.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "menuId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "authName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170604023246",
+    "entityTableName": "menu_auth",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
