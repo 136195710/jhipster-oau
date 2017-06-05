@@ -10,6 +10,7 @@ import { JhipsterHomeModule } from './home/home.module';
 import { JhipsterAdminModule } from './admin/admin.module';
 import { JhipsterAccountModule } from './account/account.module';
 import { JhipsterEntityModule } from './entities/entity.module';
+import {JhipsterUsercenterHomeModule} from "./usercenter/usercenter.module";
 
 import { LayoutRoutingModule } from './layouts';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
@@ -26,6 +27,7 @@ import {
 } from './layouts';
 
 
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -35,7 +37,8 @@ import {
         JhipsterHomeModule,
         JhipsterAdminModule,
         JhipsterAccountModule,
-        JhipsterEntityModule
+        JhipsterEntityModule,
+        JhipsterUsercenterHomeModule
     ],
     declarations: [
         JhiMainComponent,
