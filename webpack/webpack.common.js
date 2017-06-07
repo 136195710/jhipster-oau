@@ -106,6 +106,12 @@ module.exports = function (options) {
                 chunksSortMode: 'dependency',
                 inject: 'body'
             }),
+            new HtmlWebpackPlugin({
+                template: './src/main/webapp/login.html',
+                filename: 'login.html',
+                chunksSortMode: 'dependency',
+                inject: 'body'
+            }),
             new AddAssetHtmlPlugin([
                 { filepath: path.resolve('./target/www/vendor.dll.js'), includeSourcemap: false }
             ]),

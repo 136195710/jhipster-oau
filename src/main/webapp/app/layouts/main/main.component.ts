@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd, RoutesRecognized } from '@angular/router';
 
 import { JhiLanguageHelper, StateStorageService } from '../../shared';
+import {Principal} from "../../shared/auth/principal.service";
 
 @Component({
     selector: 'jhi-main',
@@ -13,6 +14,7 @@ export class JhiMainComponent implements OnInit {
         private jhiLanguageHelper: JhiLanguageHelper,
         private router: Router,
         private $storageService: StateStorageService,
+        private principal: Principal,
     ) {}
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
@@ -43,5 +45,23 @@ export class JhiMainComponent implements OnInit {
                 this.$storageService.storeDestinationState(destination, params, from);
             }
         });
+    }
+
+    /**
+     * Verify that the current user is logged in
+     * 验证当前用户是否已经登录系统
+     * @returns {boolean}
+     */
+    isAuthenticated() {
+        return this.principal.isAuthenticated();
+    }
+
+    /**
+     * Verify that the current user is a super administrator
+     * 验证当前的用户是否是超级管理员
+     * @returns {boolean}
+     */
+    isAdmin(){
+        return this.principal.hasAdminAuthority();
     }
 }

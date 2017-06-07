@@ -10,7 +10,6 @@ import { JhipsterHomeModule } from './home/home.module';
 import { JhipsterAdminModule } from './admin/admin.module';
 import { JhipsterAccountModule } from './account/account.module';
 import { JhipsterEntityModule } from './entities/entity.module';
-import {JhipsterUsercenterHomeModule} from "./usercenter/usercenter.module";
 
 import { LayoutRoutingModule } from './layouts';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
@@ -23,7 +22,8 @@ import {
     ProfileService,
     PageRibbonComponent,
     ActiveMenuDirective,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
 } from './layouts';
 
 
@@ -37,8 +37,7 @@ import {
         JhipsterHomeModule,
         JhipsterAdminModule,
         JhipsterAccountModule,
-        JhipsterEntityModule,
-        JhipsterUsercenterHomeModule
+        JhipsterEntityModule
     ],
     declarations: [
         JhiMainComponent,
@@ -46,7 +45,8 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+        LoginComponent
     ],
     providers: [
         ProfileService,

@@ -33,6 +33,17 @@ export class Principal {
         return Promise.resolve(false);
     }
 
+    hasAdminAuthority(): boolean{
+        if (!this.authenticated || !this.userIdentity || !this.userIdentity.authorities) {
+            return false;
+        }
+        if (this.userIdentity.authorities.indexOf('ROLE_ADMIN') !== -1) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     hasAuthority (authority: string): Promise<boolean> {
         if (!this.authenticated) {
            return Promise.resolve(false);
